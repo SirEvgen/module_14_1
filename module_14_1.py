@@ -14,7 +14,7 @@ balance INTEGER NOT NULL
 )
 ''')
 for i in range(1, 11):
-    cursor.execute("INSERT INTO Users(username, email, age, balance) VALUES (?, ?, ?, ?)", (f"User{i}", f"exemple{i}@gmail.com", f"{i*10}", f"{1000}"))#
+    cursor.execute("INSERT INTO Users(username, email, age, balance) VALUES (?, ?, ?, ?)", (f"User{i}", f"exemple{i}@gmail.com", f"{i*10}", f"{1000}"))
 for i in range(1, 11, 2):
         cursor.execute("SELECT balance FROM Users")
         cursor.execute(f"UPDATE Users SET balance = + 500 WHERE id = ?", (i,))

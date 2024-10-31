@@ -26,11 +26,7 @@ for i in range(0, 11, 3):
 cursor.execute("SELECT username, email, age, balance FROM Users WHERE age != ?", (60, ))
 users = cursor.fetchall()
 for user in users:
-    username = user[0]
-    email = user[1]
-    age = user[2]
-    balance = user[3]
-    print(f'{username} | {email} | {age} | {balance}')
+    print(f'{user[0]} | {user[1]} | {user[2]} | {user[3]}')
 
 connection.commit()
 connection.close()

@@ -18,11 +18,11 @@ for i in range(1, 11):
 for i in range(1, 11, 2):
         cursor.execute("SELECT balance FROM Users")
         cursor.execute(f"UPDATE Users SET balance = + 500 WHERE id = ?", (i,))
-        print(i)
+        
 for i in range(0, 11, 3):
     i += 1
     cursor.execute(f"DELETE FROM Users WHERE id = ?", (i,))
-    print(i)
+
 cursor.execute("SELECT username, email, age, balance FROM Users WHERE age != ?", (60, ))
 users = cursor.fetchall()
 for user in users:
